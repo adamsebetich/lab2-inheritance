@@ -10,18 +10,28 @@ class Bank {
     //attributes
     private initialBalance: number;
     private ownerName: string;
+    private amount: number;
 
     constructor (theBalance:number, theName:string) {
         this.initialBalance = theBalance;
         this.ownerName = theName;
     }
-    desposit(deposit:number) {
-        this.initialBalance = this.initialBalance + deposit; 
+    desposit(amount) {
+        this.initialBalance = this.initialBalance + amount; 
     }
-    withdraw(withdraw:number) {
-        this.initialBalance = this.initialBalance - withdraw;
+    withdraw(amount) {
+        this.initialBalance = this.initialBalance - amount;
     }
     checkBalance(theBalance:number, theName:string) {
-        console.log('The total amount of '+theBalance+' belongs to'+ theName)
+        console.log('The total amount of '+theBalance+' belongs to ' +theName)
     }
 }
+let Gary:Bank = new Bank(12000, "Gary Johnson");
+
+
+Gary.desposit(40);
+Gary.withdraw(300);
+Gary.checkBalance(theBalance, theName);
+
+
+
